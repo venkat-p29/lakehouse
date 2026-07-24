@@ -33,9 +33,3 @@ class MinIOClient:
         )
 
         print(f"Uploaded {file_path} to {bucket_name}/{object_name}")
-
-
-
-if __name__ == "__main__":
-    client = MinIOClient()
-    client.create_bucket("test")

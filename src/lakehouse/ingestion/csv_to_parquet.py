@@ -17,12 +17,3 @@ def csv_to_parquet(csv_path: Path, parquet_path: Path) -> None:
     df.write_parquet(parquet_path)
 
     print("Done")
-
-
-if __name__ == "__main__":
-    fileRoot = Path("/home/entropy/workspace/programming/lakehouse/sample_data")
-
-    csv_to_parquet(
-        csv_path=fileRoot / "customers.csv", 
-        parquet_path=fileRoot / "customers.parquet"
-    )

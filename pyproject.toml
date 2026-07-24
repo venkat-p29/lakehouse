@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "duckdb>=1.5.5",
     "minio>=7.2.20",
     "polars>=1.43.0",
     "pyarrow>=25.0.0",
