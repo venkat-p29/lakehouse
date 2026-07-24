@@ -1,7 +1,8 @@
 import polars as pl
+from pathlib import Path
 
 
-def csv_to_parquet(csv_path: str, parquet_path: str) -> None:
+def csv_to_parquet(csv_path: Path, parquet_path: Path) -> None:
     print(f"Reading {csv_path}")
 
     df = pl.read_csv(csv_path)
@@ -19,7 +20,9 @@ def csv_to_parquet(csv_path: str, parquet_path: str) -> None:
 
 
 if __name__ == "__main__":
+    fileRoot = Path("/home/entropy/workspace/programming/lakehouse/sample_data")
+
     csv_to_parquet(
-        csv_path="./sample_data/customers.csv", 
-        parquet_path="./sample_data/customers.parquet"
+        csv_path=fileRoot / "customers.csv", 
+        parquet_path=fileRoot / "customers.parquet"
     )

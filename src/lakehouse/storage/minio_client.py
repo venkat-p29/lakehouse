@@ -1,8 +1,6 @@
 from minio import Minio
 import os
-from dotenv import load_dotenv
-
-load_dotenv()
+from pathlib import Path
 
 
 class MinIOClient:
@@ -14,6 +12,7 @@ class MinIOClient:
             secure=False
         )
 
+
     def create_bucket(self, bucket_name: str) -> None:
         client = self.client
 
@@ -22,6 +21,19 @@ class MinIOClient:
         else:
             client.make_bucket(bucket_name)
             print(f"Created {bucket_name} bucket")
+
+
+    def upload_file(self, bucket_name: str, object_name: str, file_path: Path) -> None:
+        client = self.client
+
+        client.fput_object(
+            bucket_name,
+            object_name,
+            file_path
+        )
+
+        print(f"Uploaded {file_path} to {bucket_name}/{object_name}")
+
 
 
 if __name__ == "__main__":
