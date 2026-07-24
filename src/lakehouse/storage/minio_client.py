@@ -17,10 +17,10 @@ class MinIOClient:
         client = self.client
 
         if client.bucket_exists(bucket_name):
-            print(f"{bucket_name} exists")
+            print(f"Bucket '{bucket_name}' exists")
         else:
             client.make_bucket(bucket_name)
-            print(f"Created {bucket_name} bucket")
+            print(f"Created '{bucket_name}' bucket")
 
 
     def upload_file(self, bucket_name: str, object_name: str, file_path: Path) -> None:

@@ -1,0 +1,1 @@
+{"dataset": "customers", "source_file": "/home/entropy/workspace/programming/lakehouse/sample_data/customers.parquet", "object_path": "landing/customers/ingestion_date=2026-07-24/customers.parquet", "row_count": 4, "schema": {"customer_id": "Int64", "name": "String", "city": "String"}, "ingestion_date": "2026-07-24", "uploaded_at": "2026-07-24T15:16:51.419014"}
